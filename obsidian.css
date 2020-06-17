@@ -2,6 +2,7 @@
 	--color-dark: #1a1a1a;
 	--color-light: #f7f7f7;
 	--color-accent: #c0522a;
+	--font-family-editor: "iA Writer Quattro V", "iA Writer Quattro S", 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
 }
 
 .theme-dark {
@@ -61,6 +62,16 @@
 	--text-selection: var(--color-off);
 }
 
+/* antialiasing for non-retina */
+* {
+	-webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+/* use some other fonts for the body, too */
+body {
+	font-family: "SF Pro Text", "SF UI Text", 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+}
+
 /* here's the hack to hide unnecesasry top borders */
 .horizontal-main-container {
 	border-top: 1px solid var(--color-back);
@@ -75,6 +86,7 @@
 /* cursor color */
 .CodeMirror-cursor {
 	border-color: var(--color-accent) !important;
+	border-left-width: 0.125em;
 }
 
 /* the mighty graph, hardcoded colors. make you nothing, eh */
@@ -378,13 +390,35 @@ div.markdown-preview-view {
 .theme-light code[class*="language-"],
 .theme-light pre[class*="language-"] {
 	white-space: pre-wrap;
-	background-color: #ffffff;
+	background-color: var(--color-light);
 }
 
-/* Changing size/color of the header hashtags ## */
+/* Changing color of the header hashtags ## */
 .cm-formatting-header {
 	color: var(--color-accent);
-	font-size: 0.6em;
+	/* font-size: 0.6em; */
+}
+
+/* actual header sizes, plain text edition */
+.cm-s-obsidian pre.HyperMD-header.HyperMD-header-1,
+.cm-s-obsidian pre.HyperMD-header.HyperMD-header-2,
+.cm-s-obsidian pre.HyperMD-header.HyperMD-header-3,
+.cm-s-obsidian pre.HyperMD-header.HyperMD-header-4,
+.cm-s-obsidian pre.HyperMD-header.HyperMD-header-5,
+.cm-s-obsidian pre.HyperMD-header.HyperMD-header-6 {
+	font-size: inherit;
+	padding-bottom: 0;
+}
+
+/* actual header paddings, preview edition */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+	margin-top: 1.681em;
+	font-weight: bold;
 }
 
 /* no header margin itself for the editor */
@@ -522,10 +556,14 @@ div.markdown-preview-view {
 	padding-right: 5px;
 }
 
+/* color the tags in the tag pane */
+.tag-pane-tag {
+	color: var(--color-front);
+}
+
 /* Color the hover background like we do the selected left nav */
 .tag-pane-tag:hover {
 	background-color: var(--background-nav-alt);
-	color: var(--text-nav-selected);
 }
 
 /* Style the tag pane tag count with the bear red coloring used in selected item from left nav */
