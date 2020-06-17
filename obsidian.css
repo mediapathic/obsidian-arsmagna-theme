@@ -32,6 +32,7 @@
   --text-nav-selected: var(--color-light);
   --text-normal: #dcddde;
   --text-on-accent: #dcddde;
+  --text-selection: var(--color-off);
 }
 
 .theme-light {
@@ -57,6 +58,7 @@
   --text-nav-selected: var(--color-dark);
   --text-nav: var(--color-dark);
   --text-normal: var(--color-dark);
+  --text-selection: var(--color-off);
 }
 
 /* here's the hack to hide unnecesasry top borders */
