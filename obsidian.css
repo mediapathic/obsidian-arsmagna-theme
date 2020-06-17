@@ -433,6 +433,20 @@ div.markdown-preview-view {
   color: var(--color-front);
 }
 
+/* hashtag coloring and decoration */
+.cm-s-obsidian span.cm-hashtag {
+  text-decoration: none;
+}
+.cm-s-obsidian span.cm-hashtag-end {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* link coloring and decoration */
+.cm-s-obsidian span.cm-url {
+  color: inherit;
+}
+
 /* Code block border color */
 .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
   border-top: 1px solid var(--code-block-border);
@@ -529,7 +543,7 @@ div.markdown-preview-view {
   padding: 10px 5px;
 }
 .search-result-container.mod-global-search {
-  padding: 0 15px 15px 0;
+  padding: 10px 15px 15px 15px;
 }
 .search-result-container.mod-global-search .search-result {
   padding-bottom: 10px;
