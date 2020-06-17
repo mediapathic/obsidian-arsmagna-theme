@@ -349,6 +349,7 @@ body:not(.is-grabbing) .nav-folder-title:hover .nav-folder-collapse-indicator {
 .mod-horizontal .view-header,
 .mod-vertical .view-header {
 	border-top: 1px solid var(--color-off);
+	border-bottom-width: 1px;
 }
 
 /* padding in front of title */
