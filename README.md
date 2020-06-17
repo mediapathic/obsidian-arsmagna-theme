@@ -1,6 +1,6 @@
 # BENWF theme for Obsidian
 
-A theme for [Obsidian](https://obsidian.md), with UI elements inspired by the minimalism of [iA Writer](https://ia.net/writer), and based on ["Subtlegold"  by Kartik Kulkarni](Kartik Kulkarni).
+A dark and light theme for [Obsidian](https://obsidian.md), with UI elements inspired by the minimalism of [iA Writer](https://ia.net/writer), and based on ["Subtlegold" by Kartik Kulkarni](https://github.com/kartik-karz/subtlegold-obsidian).
 
 
 ## Install
