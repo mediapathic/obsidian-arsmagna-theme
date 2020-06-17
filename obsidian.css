@@ -65,9 +65,14 @@
   margin-top: -2px;
 }
 
-/* OBISIDIAN UI colors */
+/* Obsidian UI colors */
 .checkbox-container {
   background-color: var(--color-off);
+}
+
+/* cursor color */
+.CodeMirror-cursor {
+  border-color: var(--color-accent) !important;
 }
 
 /* the mighty graph, hardcoded colors. make you nothing, eh */
