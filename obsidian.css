@@ -85,7 +85,7 @@ body {
 
 /* the sometimes appearing very thin scrollbar */
 .CodeMirror-sizer {
-	background-color: color(--color-back);
+	background-color: var(--color-back);
 }
 
 /* cursor color */
