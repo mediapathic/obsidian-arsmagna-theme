@@ -229,6 +229,12 @@ body {
 	color: var(--text-nav);
 }
 
+/* color of nav tree text hover */
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover {
+	color: var(--color-accent);
+}
+
 /* Set the left nav background to same color as ribbon so we can make a curved corner that matches */
 .side-dock-panels-container {
 	background-color: var(--background-nav-alt);
@@ -303,13 +309,7 @@ body {
 .nav-folder.is-active>.nav-folder-collapse-indicator:hover {
 	background-color: var(--color-accent);
 	color: var(--text-nav-selected);
-}
-
-/* Background and text color of hovered item in left nav tree */
-body:not(.is-grabbing) .nav-file-title:hover,
-body:not(.is-grabbing) .nav-folder-title:hover {
-	background-color: var(--background-secondary-alt);
-	color: var(--text-nav-selected);
+	cursor: default;
 }
 
 /* Background and text color of hovered collapse indicator in left nav tree */
