@@ -146,6 +146,7 @@ body {
 
 /* indicator */
 .side-dock-collapsible-section-header-indicator {
+	color: var(--color-off);
 	left: -5px;
 	top: -1px;
 }
@@ -189,6 +190,7 @@ body {
 
 /* position that indicators */
 .nav-folder-collapse-indicator {
+	color: var(--color-off);
 	left: 2px;
 	top: 5px;
 }
@@ -661,6 +663,11 @@ div.markdown-preview-view {
 	margin-top: 5px;
 }
 
+/* collapse hover */
+.workspace-ribbon-collapse-btn:hover {
+	color: var(--color-accent);
+}
+
 /* workspace tabs */
 .workspace-tabs {
 	padding-right: 0;
@@ -683,6 +690,11 @@ div.markdown-preview-view {
 /* smaller paddings for tab header icons */
 .workspace-tab-header-inner {
 	padding: 5px 10px 5px 5px;
+}
+
+/* hover color for tab headers */
+.workspace-tab-header:hover {
+	color: var(--color-accent);
 }
 
 /* icons for the tab headers */
