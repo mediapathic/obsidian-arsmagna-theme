@@ -405,6 +405,11 @@ div.markdown-preview-view {
 	/* font-size: 0.6em; */
 }
 
+/* line height for editor mode */
+.cm-s-obsidian {
+	line-height: 2;
+}
+
 /* actual header sizes, plain text edition */
 .cm-s-obsidian pre.HyperMD-header.HyperMD-header-1,
 .cm-s-obsidian pre.HyperMD-header.HyperMD-header-2,
