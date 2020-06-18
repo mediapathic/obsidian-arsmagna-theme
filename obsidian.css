@@ -454,6 +454,7 @@ div.markdown-preview-view {
 .cm-s-obsidian pre.HyperMD-header.HyperMD-header-6 {
 	font-size: inherit;
 	padding-bottom: 0;
+	line-height: 2em !important;
 }
 
 /* actual header paddings, preview edition */
