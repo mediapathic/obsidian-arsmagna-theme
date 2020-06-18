@@ -404,7 +404,6 @@ div.markdown-preview-view {
 /* Changing color of the header hashtags ## */
 .cm-formatting-header {
 	color: var(--color-accent);
-	/* font-size: 0.6em; */
 }
 
 /* line height for editor mode */
@@ -448,7 +447,6 @@ div.markdown-preview-view {
 /* Coloring the list bullets/numbers */
 .cm-s-obsidian span.cm-formatting-list {
 	color: var(--color-accent);
-	font-size: 0.85em;
 	font-weight: 500;
 	font-family: var(--font-monospace);
 }
@@ -456,7 +454,6 @@ div.markdown-preview-view {
 /* Editor view - task list, color and veritcal align */
 .cm-s-obsidian span.cm-formatting-task {
 	color: var(--color-accent);
-	font-size: 0.85em;
 	font-weight: 500;
 	position: relative;
 	top: -0.12em;
