@@ -448,7 +448,6 @@ div.markdown-preview-view {
 .cm-s-obsidian span.cm-formatting-list {
 	color: var(--color-accent);
 	font-weight: 500;
-	font-family: var(--font-monospace);
 }
 
 /* Editor view - task list, color and veritcal align */
