@@ -9,6 +9,8 @@
 	--color-front: var(--color-light);
 	--color-back: var(--color-dark);
 	--color-off: #444;
+	--background-modifier-error: var(--color-accent);
+	--background-modifier-error-hover: var(--color-off);
 	--background-nav-alt: var(--color-dark);
 	--background-nav: var(--color-dark);
 	--background-primary-alt: var(--color-dark);
@@ -25,8 +27,8 @@
 	--scrollbar-thumb-bg: rgba(255, 255, 255, 0.1);
 	--text-accent-hover: var(--color-accent);
 	--text-accent: var(--color-accent);
-	--text-error-hover: #990000;
-	--text-error: #ff3333;
+	--text-error-hover: var(--color-off);
+	--text-error: var(--color-accent);
 	--text-faint: #555;
 	--text-highlight-bg: #dbaa205e;
 	--text-muted: #888;
@@ -40,6 +42,8 @@
 	--color-front: var(--color-dark);
 	--color-back: var(--color-light);
 	--color-off: #ccc;
+	--background-modifier-error: var(--color-accent);
+	--background-modifier-error-hover: var(--color-off);
 	--background-nav-alt: var(--color-light);
 	--background-nav: var(--color-light);
 	--background-primary-alt: var(--color-light);
@@ -70,6 +74,25 @@
 /* use some other fonts for the body, too */
 body {
 	font-family: "SF Pro Text", "SF UI Text", 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+}
+
+/* button colors */
+.button.mod-warning {
+	background-color: var(--color-accent) !important;
+}
+
+.modal-button-container button:not(.mod-cta):not(.mod-warning) {
+	background-color: var(--color-off);
+}
+
+.modal-button-container button:not(.mod-cta):not(.mod-warning):hover {
+	background-color: var(--color-back);
+}
+
+/* settings colors */
+.horizontal-tab-nav-item:hover,
+.vertical-tab-nav-item:hover {
+	color: var(--color-accent);
 }
 
 /* here's the hack to hide unnecesasry top borders */
@@ -173,6 +196,12 @@ body {
 /* style the nav folder title */
 .mod-root>.nav-folder-title {
 	padding: 10px 0;
+}
+
+/* no need to hover color it */
+.nav-folder.mod-root>.nav-file-title:hover,
+.nav-folder.mod-root>.nav-folder-title:hover {
+	color: inherit;
 }
 
 /* Indent wrapped nav text */
@@ -384,6 +413,11 @@ body:not(.is-grabbing) .nav-folder-title:hover .nav-folder-collapse-indicator {
 	color: var(--color-accent);
 }
 
+/* fix menu item icon height */
+.menu-item-icon {
+	line-height: 36px;
+}
+
 /* Font for the markdown source panel */
 div.markdown-source-view {
 	font-family: var(--font-family-editor);
@@ -442,6 +476,11 @@ div.markdown-preview-view {
 .cm-s-obsidian .CodeMirror-code {
 	margin-top: 40px;
 	margin-bottom: 40px;
+}
+
+/* no margins for list in editor */
+.cm-s-obsidian pre.HyperMD-list-line {
+	padding-top: 0;
 }
 
 /* Coloring the list bullets/numbers */
