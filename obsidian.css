@@ -494,8 +494,6 @@ div.markdown-preview-view {
 .cm-s-obsidian span.cm-formatting-task {
 	color: var(--color-accent);
 	font-weight: 500;
-	position: relative;
-	top: -0.12em;
 }
 
 /* Preview Checkboxes don't seem to align correctly */
