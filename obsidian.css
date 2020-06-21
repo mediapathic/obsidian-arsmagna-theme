@@ -29,9 +29,9 @@
 	--text-accent: var(--color-accent);
 	--text-error-hover: var(--color-off);
 	--text-error: var(--color-accent);
-	--text-faint: #555;
+	--text-faint: #333;
 	--text-highlight-bg: #dbaa205e;
-	--text-muted: #888;
+	--text-muted: #555;
 	--text-nav-selected: var(--color-light);
 	--text-normal: #dcddde;
 	--text-on-accent: #dcddde;
