@@ -9,6 +9,7 @@
 	--color-front: var(--color-light);
 	--color-back: var(--color-dark);
 	--color-off: #444;
+	--color-shaded: #999;
 	--background-modifier-error: var(--color-accent);
 	--background-modifier-error-hover: var(--color-off);
 	--background-nav-alt: var(--color-dark);
@@ -29,9 +30,9 @@
 	--text-accent: var(--color-accent);
 	--text-error-hover: var(--color-off);
 	--text-error: var(--color-accent);
-	--text-faint: #333;
+	--text-faint: var(--color-shaded);
 	--text-highlight-bg: #dbaa205e;
-	--text-muted: #555;
+	--text-muted: var(--color-shaded);
 	--text-nav-selected: var(--color-light);
 	--text-normal: var(--color-light);
 	--text-on-accent: #dcddde;
@@ -42,6 +43,7 @@
 	--color-front: var(--color-dark);
 	--color-back: var(--color-light);
 	--color-off: #ccc;
+	--color-shaded: #666;
 	--background-modifier-error: var(--color-accent);
 	--background-modifier-error-hover: var(--color-off);
 	--background-nav-alt: var(--color-light);
@@ -58,8 +60,9 @@
 	--list-color: var(--color-accent);
 	--text-accent-hover: var(--color-accent);
 	--text-accent: var(--color-accent);
-	--text-faint: rgba(150, 150, 150, 255);
+	--text-faint: var(--color-shaded);
 	--text-highlight-bg: #dbaa205e;
+	--text-muted: var(--color-shaded);
 	--text-nav-selected: var(--color-dark);
 	--text-nav: var(--color-dark);
 	--text-normal: var(--color-dark);
