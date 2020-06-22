@@ -551,6 +551,12 @@ div.markdown-preview-view {
 	color: inherit;
 }
 
+/* inline code color and font size */
+.cm-s-obsidian span.cm-inline-code {
+	color: var(--color-front);
+	font-size: inherit;
+}
+
 /* Code block border color */
 .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
 	border-top: 1px solid var(--code-block-border);
