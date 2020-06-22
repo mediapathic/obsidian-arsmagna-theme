@@ -504,6 +504,17 @@ div.markdown-preview-view {
 	/* top: 3px; */
 }
 
+/* footnote font size */
+.cm-s-obsidian pre.HyperMD-footnote {
+	font-size: inherit;
+	padding-left: inherit;
+}
+
+/* footnote colors */
+.cm-s-obsidian pre.HyperMD-footnote span.cm-hmd-footnote {
+	color: var(--color-front);
+}
+
 /* Preview code block background */
 .markdown-preview-view pre {
 	padding: 1em;
