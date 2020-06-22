@@ -629,7 +629,7 @@ div.markdown-preview-view {
 }
 
 .search-result-file-match {
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .search-result-file-title,
@@ -650,7 +650,7 @@ div.markdown-preview-view {
 }
 
 .search-empty-state {
-	font-size: 12px;
+	font-size: 14px;
 	margin: -10px 5px 15px 5px;
 }
 
@@ -684,12 +684,12 @@ div.markdown-preview-view {
 
 .tag-pane-tag {
 	padding: 0;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .tag-pane-empty {
 	margin: 0;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 /* collaps thingies */
