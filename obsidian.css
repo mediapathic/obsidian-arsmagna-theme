@@ -33,7 +33,7 @@
 	--text-highlight-bg: #dbaa205e;
 	--text-muted: #555;
 	--text-nav-selected: var(--color-light);
-	--text-normal: #dcddde;
+	--text-normal: var(--color-light);
 	--text-on-accent: #dcddde;
 	--text-selection: var(--color-off);
 }
