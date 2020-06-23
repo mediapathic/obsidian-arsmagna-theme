@@ -382,7 +382,7 @@ body:not(.is-grabbing) .nav-folder-title:hover .nav-folder-collapse-indicator {
 
 .mod-horizontal .view-header,
 .mod-vertical .view-header {
-	border-top: 1px solid var(--color-off);
+	/* border-top: 1px solid var(--color-off); */
 	border-bottom-width: 1px;
 }
 
@@ -395,6 +395,11 @@ body:not(.is-grabbing) .nav-folder-title:hover .nav-folder-collapse-indicator {
 .view-header-title {
 	font-size: 16px;
 	font-weight: 600;
+}
+
+/* border bottom for view content */
+.view-content {
+	border-bottom: 1px solid var(--color-off);
 }
 
 /* items for the editor */
@@ -784,6 +789,27 @@ div.markdown-preview-view {
 	border-color: var(--color-off);
 }
 
+/* embeds and titles */
+.markdown-embed-title,
+.file-embed-title {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.markdown-preview-view .markdown-embed,
+.markdown-preview-view .file-embed {
+	border: 1px solid var(--color-off);
+}
+
+.markdown-embed-content h1,
+.markdown-embed-content h2,
+.markdown-embed-content h3,
+.markdown-embed-content h4,
+.markdown-embed-content h5,
+.markdown-embed-content h6 {
+	font-weight: bold;
+}
+
 /* boh selectah */
 .suggestion-item.is-selected {
 	background-color: var(--color-accent);
@@ -791,6 +817,11 @@ div.markdown-preview-view {
 }
 
 /* nothing to see here: emoty states */
+.empty-state {
+	margin-top: 35px;
+	border-top: 1px solid var(--color-off);
+}
+
 .empty-state-title {
 	font-size: 16px;
 	font-weight: normal;
