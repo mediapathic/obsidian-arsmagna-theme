@@ -117,7 +117,7 @@ body {
 /* cursor color */
 .CodeMirror-cursor {
 	border-color: var(--color-accent) !important;
-	border-left-width: 0.125em;
+	border-left-width: 0.2em;
 }
 
 /* the mighty graph, hardcoded colors. make you nothing, eh */
