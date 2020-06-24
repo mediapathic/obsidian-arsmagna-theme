@@ -7,7 +7,7 @@ A dark and light theme for [Obsidian](https://obsidian.md), with UI elements ins
 
 1. Download obsidian.css to your Obsidian vault folder.
 2. In Obsidian, click _Settings_ → _Plugins_ and turn on "Custom CSS".
-3. There is no step 3, _except_ for when you want to use the font I use, then you'll have to install [iA Writer Quattro V](https://github.com/iaolo/iA-Fonts).
+3. There is no step 3, _except for_ when you want to use the font I use, then you'll have to install [iA Writer Quattro V](https://github.com/iaolo/iA-Fonts).
 
 
 ## Licence
