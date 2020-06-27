@@ -18,6 +18,7 @@
 	--background-primary: var(--color-dark);
 	--background-secondary-alt: var(--color-dark);
 	--background-secondary: var(--color-dark);
+	--code-block-border: var(--color-off);
 	--interactive-accent-hover: var(--color-accent);
 	--interactive-accent-rgb: var(--color-accent);
 	--interactive-accent: var(--color-accent);
@@ -52,8 +53,8 @@
 	--background-primary: var(--color-light);
 	--background-secondary-alt: var(--color-light);
 	--background-secondary: var(--color-light);
-	--code-block-background: #ffff;
-	--code-block-border: #92a1a17a;
+	--block-background: #ffff;
+	--code-block-border: var(--color-off);
 	--interactive-accent-hover: var(--color-accent);
 	--interactive-accent-rgb: var(--color-accent);
 	--interactive-accent: var(--color-accent);
@@ -436,13 +437,6 @@ div.markdown-preview-view {
 	font-family: var(--font-family-preview);
 }
 
-/* Enable wrapping of code blocks in the preview panel */
-.theme-light code[class*="language-"],
-.theme-light pre[class*="language-"] {
-	white-space: pre-wrap;
-	background-color: var(--color-light);
-}
-
 /* Changing color of the header hashtags ## */
 .cm-formatting-header {
 	color: var(--color-accent);
@@ -581,25 +575,55 @@ div.markdown-preview-view {
 	background-color: var(--code-block-background);
 }
 
+/* Colors and fonts for code block */
+.theme-light code[class*="language-"],
+.theme-light pre[class*="language-"],
+.theme-dark code[class*="language-"],
+.theme-dark pre[class*="language-"],
+.markdown-preview-view code {
+	color: var(--color-front);
+	font-size: inherit;
+	white-space: pre-wrap;
+	background-color: var(--color-background);
+}
+
 /* Code block left and right padding */
-.cm-s-obsidian pre.HyperMD-codeblock {
+/* .cm-s-obsidian pre.HyperMD-codeblock {
 	padding: 0px 10px 0px 10px;
+} */
+/* Code block borders */
+.cm-s-obsidian div.HyperMD-codeblock-begin-bg,
+.cm-s-obsidian pre.HyperMD-codeblock-begin,
+.cm-s-obsidian pre.HyperMD-codeblock-end,
+.cm-s-obsidian div.HyperMD-codeblock-end-bg {
+	border: 0;
 }
 
-/* Code block top padding */
-.cm-s-obsidian pre.HyperMD-codeblock-begin {
-	padding-top: 10px;
+/* Code block colors & fonts */
+.cm-s-obsidian pre.HyperMD-codeblock {
+	color: var(--color-front);
+	line-height: inherit;
+	font-size: inherit;
 }
 
-/* Code block bottom padding */
-.cm-s-obsidian pre.HyperMD-codeblock-end {
-	padding-top: 10px;
-}
-
-/* Code block left and right border colors */
-.cm-s-obsidian div.HyperMD-codeblock-bg {
-	border-left: 1px solid var(--code-block-border);
-	border-right: 1px solid var(--code-block-border);
+/* token string */
+.theme-dark .token.selector,
+.theme-dark .token.attr-name,
+.theme-dark .token.color,
+.theme-dark .token.string,
+.theme-dark .token.property,
+.theme-dark .token.char,
+.theme-dark .token.builtin,
+.theme-dark .token.inserted,
+.theme-light .token.selector,
+.theme-light .token.attr-name,
+.theme-light .token.color,
+.theme-light .token.string,
+.theme-light .token.property,
+.theme-light .token.char,
+.theme-light .token.builtin,
+.theme-light .token.inserted {
+	color: var(--color-accent);
 }
 
 /* Color links */
