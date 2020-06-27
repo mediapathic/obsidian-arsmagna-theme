@@ -526,6 +526,12 @@ div.markdown-preview-view {
 	white-space: pre-wrap;
 }
 
+/* Preview for blockquotes */
+.markdown-preview-view blockquote {
+	border: 0;
+	border-left: 5px solid var(--color-accent);
+}
+
 /* blockquote coloring */
 .cm-s-obsidian span.cm-formatting {
 	color: var(--color-accent) !important;
