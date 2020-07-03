@@ -1,13 +1,13 @@
-# BENWF theme for Obsidian
+# Ars Magna theme for Obsidian
 
-A dark and light theme for [Obsidian](https://obsidian.md), with UI elements inspired by the minimalism of [iA Writer](https://ia.net/writer), and based on ["Subtlegold" by Kartik Kulkarni](https://github.com/kartik-karz/subtlegold-obsidian).
+_The World is bound with Secret Knots  -- A. Kircher_
 
+A theme for Obsidian that is a synthesis of lots of other people's work, as is fitting. Originally based on [deathau's](https://github.com/deathau) Notation theme, incorporating his and [cotemaxime's) · GitHub](https://github.com/cotemaxime) work on [Andy Matuschak mode](https://forum.obsidian.md/t/andy-matuschak-mode-v2-7-updated-for-0-7-new-panes/170), plus a few other things that I wanted. Works equally well in lucis or umbra modes.
 
 ## Install
 
 1. Download obsidian.css to your Obsidian vault folder.
 2. In Obsidian, click _Settings_ → _Plugins_ and turn on "Custom CSS".
-3. There is no step 3, _except for_ when you want to use the font I use, then you'll have to install [iA Writer Quattro V](https://github.com/iaolo/iA-Fonts).
 
 
 ## Licence
@@ -17,20 +17,4 @@ It's licensed under [The Unlicense](./LICENSE).
 
 ## Screenshots
 
-![obsidian-benwf-1.png](./obsidian-benwf-0.png)
-
-![obsidian-benwf-1.png](./obsidian-benwf-1.png)
-
-![obsidian-benwf-2.png](./obsidian-benwf-2.png)
-
-![obsidian-benwf-3.png](./obsidian-benwf-3.png)
-
-![obsidian-benwf-4.png](./obsidian-benwf-4.png)
-
-![obsidian-benwf-5.png](./obsidian-benwf-5.png)
-
-![obsidian-benwf-6.png](./obsidian-benwf-6.png)
-
-![obsidian-benwf-7.png](./obsidian-benwf-7.png)
-
-![obsidian-benwf-7.png](./obsidian-benwf-8.png)
+![](arsmagna.png)

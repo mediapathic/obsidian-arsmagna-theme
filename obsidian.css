@@ -1,863 +1,453 @@
-:root {
-	--color-dark: #1a1a1a;
-	--color-light: #f7f7f7;
-	--color-accent: #c0522a;
-	--font-family-editor: "iA Writer Quattro V", "iA Writer Quattro S", 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
-}
 
-.theme-dark {
-	--color-front: var(--color-light);
-	--color-back: var(--color-dark);
-	--color-off: #444;
-	--color-shaded: #999;
-	--background-modifier-error: var(--color-accent);
-	--background-modifier-error-hover: var(--color-off);
-	--background-nav-alt: var(--color-dark);
-	--background-nav: var(--color-dark);
-	--background-primary-alt: var(--color-dark);
-	--background-primary: var(--color-dark);
-	--background-secondary-alt: var(--color-dark);
-	--background-secondary: var(--color-dark);
-	--code-block-border: var(--color-off);
-	--interactive-accent-hover: var(--color-accent);
-	--interactive-accent-rgb: var(--color-accent);
-	--interactive-accent: var(--color-accent);
-	--interactive-hover: #303030;
-	--interactive-normal: #2a2a2a;
-	--scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2);
-	--scrollbar-bg: rgba(255, 255, 255, 0.05);
-	--scrollbar-thumb-bg: rgba(255, 255, 255, 0.1);
-	--text-accent-hover: var(--color-accent);
-	--text-accent: var(--color-accent);
-	--text-error-hover: var(--color-off);
-	--text-error: var(--color-accent);
-	--text-faint: var(--color-shaded);
-	--text-highlight-bg: #dbaa205e;
-	--text-muted: var(--color-shaded);
-	--text-nav-selected: var(--color-light);
-	--text-normal: var(--color-light);
-	--text-on-accent: #dcddde;
-	--text-selection: var(--color-off);
-}
+/*====================_Ars Magna Lucis et Umbrae_===================*/
+/* 2020-06-28 Theme by @mediapathic, but honeslty mostly composed of bits from @death_au and @cotemaxime, */
+/* and a few other fragments here and there.  */
 
-.theme-light {
-	--color-front: var(--color-dark);
-	--color-back: var(--color-light);
-	--color-off: #ccc;
-	--color-shaded: #666;
-	--background-modifier-error: var(--color-accent);
-	--background-modifier-error-hover: var(--color-off);
-	--background-nav-alt: var(--color-light);
-	--background-nav: var(--color-light);
-	--background-primary-alt: var(--color-light);
-	--background-primary: var(--color-light);
-	--background-secondary-alt: var(--color-light);
-	--background-secondary: var(--color-light);
-	--block-background: #ffff;
-	--code-block-border: var(--color-off);
-	--interactive-accent-hover: var(--color-accent);
-	--interactive-accent-rgb: var(--color-accent);
-	--interactive-accent: var(--color-accent);
-	--list-color: var(--color-accent);
-	--text-accent-hover: var(--color-accent);
-	--text-accent: var(--color-accent);
-	--text-faint: var(--color-shaded);
-	--text-highlight-bg: #dbaa205e;
-	--text-muted: var(--color-shaded);
-	--text-nav-selected: var(--color-dark);
-	--text-nav: var(--color-dark);
-	--text-normal: var(--color-dark);
-	--text-selection: var(--color-off);
-}
 
-/* antialiasing for non-retina */
-* {
-	-webkit-font-smoothing: subpixel-antialiased !important;
-}
+/* font */
 
-/* use some other fonts for the body, too */
 body {
-	font-family: "SF Pro Text", "SF UI Text", 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+  /* font stacks taken directly from Notion */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  -webkit-font-smoothing: auto;
 }
 
-/* button colors */
-.button.mod-warning {
-	background-color: var(--color-accent) !important;
+body.theme-light, body.theme-dark  {
+  /* change these numbers for an entirely new look */
+  --hue: 203;
+  --sat: 8%;
+  --interactive-accent-rgb: 200, 120, 0;
+  --code: #EB5757;
 }
 
-.modal-button-container button:not(.mod-cta):not(.mod-warning) {
-	background-color: var(--color-off);
+/* Dark theme */
+.theme-dark {
+  --L0: 0%;
+  --L1: 23%;
+  --L2: 20%;
+  --L3: 25%;
+
+  --pulp-color:  rgba(255, 180, 0, 0.75);
+  --text-rgb: 240, 240, 240;
+
+  --text-highlight-bg:          rgb(89, 86, 59);
+  --text-selection:             var(--pulp-color);
+  --interactive-normal:         #2a2a2a;
+  --interactive-hover:          #303030;
+
+  --GText: hsl(var(--hue), var(--sat), 90%);
+  --GFill: hsl(var(--hue), var(--sat), 50%);
+  --GLine: hsl(var(--hue), var(--sat), var(--L0));
 }
 
-.modal-button-container button:not(.mod-cta):not(.mod-warning):hover {
-	background-color: var(--color-back);
+/* Light theme */
+.theme-light {
+  --L0: 0%;
+  --L1: 100%;
+  --L2: 96%;
+  --L3: 90%;
+
+  --text-rgb: 55, 53, 47;
+
+  --text-highlight-bg:          rgb(251, 243, 219);
+  --text-selection:             rgba(255, 180, 0, 0.15);
+  --interactive-normal:         #f2f3f5;
+  --interactive-hover:          #e9e9e9;
+
+  --GText: hsl(var(--hue), var(--sat), 1i0%);
+  --GFill: hsl(var(--hue), var(--sat), 50%);
+  --GLine: hsl(var(--hue), var(--sat), var(--L3));
 }
 
-/* settings colors */
-.horizontal-tab-nav-item:hover,
-.vertical-tab-nav-item:hover {
-	color: var(--color-accent);
+
+body.theme-light, body.theme-dark {
+  --background-primary:         hsl(var(--hue), var(--sat), var(--L1));
+  --background-primary-alt:     hsl(var(--hue), var(--sat), var(--L3));
+  --background-secondary:       hsl(var(--hue), var(--sat), var(--L2));
+  --background-secondary-alt:   hsl(var(--hue), var(--sat), var(--L3));
+  --background-accent:          hsl(var(--hue), var(--sat), var(--L0));
+  --background-modifier-border: rgba(var(--text-rgb), 0.14);
+  --text-accent:                rgba(var(--text-rgb), 0.45);
+  --text-accent-hover:          rgba(var(--text-rgb), 0.45);
+  --text-normal:                rgba(var(--text-rgb), 0.9);
+/*  --text-muted:                 rgba(var(--text-rgb), 0.45); /* subtle mode */
+  --text-muted:                 var(--pulp-color);        /* Full Pulp */
+  --text-faint:                 rgba(var(--text-rgb), 0.25);
+  --text-on-accent:             rgba(var(--text-rgb), 0.9);
+  --interactive-accent:         rgb(var(--interactive-accent-rgb));
+  --interactive-accent-hover:   rgba(var(--interactive-accent-rgb), 0.8);
+}
+body.theme-light {
+  --background-primary-alt:     hsl(var(--hue), var(--sat), var(--L2));
 }
 
-/* here's the hack to hide unnecesasry top borders */
-.horizontal-main-container {
-	border-top: 1px solid var(--color-back);
-	margin-top: -2px;
-}
-
-/* Obsidian UI colors */
-.checkbox-container {
-	background-color: var(--color-off);
-}
-
-/* the sometimes appearing very thin scrollbar */
-.CodeMirror-sizer {
-	background-color: var(--color-back);
-}
-
-/* cursor color */
-.CodeMirror-cursor {
-	border-color: var(--color-accent) !important;
-	border-left-width: 0.2em;
-}
-
-/* the mighty graph, hardcoded colors. make you nothing, eh */
-.theme-dark .graph-view.color-fill {
-	color: #f7f7f7;
-}
-
-.theme-light .graph-view.color-fill {
-	color: #1a1a1a;
-}
-
-.theme-dark .graph-view.color-circle {
-	color: #f7f7f7;
-}
-
-.theme-light .graph-view.color-line {
-	color: #1a1a1a;
-}
-
-.theme-dark .graph-view.color-text {
-	color: #f7f7f7;
-}
-
-.theme-light .graph-view.color-text {
-	color: #1a1a1a;
-}
-
-.theme-dark .graph-view.color-fill-highlight,
-.theme-light .graph-view.color-fill-highlight {
-	color: #c0522a;
-}
-
-.theme-dark .graph-view.color-line-highlight {
-	color: #f7f7f7;
-}
-
-.theme-light .graph-view.color-line-highlight {
-	color: #1a1a1a;
-}
-
-/* colooors */
-.side-dock-ribbon-tab.is-active {
-	background-color: var(--background-secondary);
-	color: var(--color-accent);
-}
-
-/* paddings and margins for the side dock */
-.side-dock-collapsible-section-header {
-	padding: 0px 5px 0 5px;
-	font-size: 16px;
-}
-
-/* indicator */
-.side-dock-collapsible-section-header-indicator {
-	color: var(--color-off);
-	left: -5px;
-	top: -1px;
-}
-
-/* Top left "File explorer" text */
-.side-dock-title {
-	color: var(--text-nav);
-}
-
-/* Wrap long nav text and some paddings */
-.nav-file-title,
-.nav-folder-title {
-	white-space: normal;
-	padding: 0 10px;
-	border-radius: 0;
-}
-
-/* padding and border for the navigation pane header */
-.nav-header {
-	padding: 10px 15px 0 13px;
-	margin-bottom: 0;
-}
-
-/* style the nav folder title */
-.mod-root>.nav-folder-title {
-	padding: 10px 0;
-}
-
-/* no need to hover color it */
-.nav-folder.mod-root>.nav-file-title:hover,
-.nav-folder.mod-root>.nav-folder-title:hover {
-	color: inherit;
-}
-
-/* Indent wrapped nav text */
-.nav-file-title-content {
-	margin-left: 10px;
-	text-indent: -10px;
-}
-
-/* other nav file paddings and margins */
-.nav-file-title-content,
-.nav-folder-title-content {
-	border: 0;
-	padding: 5px 2px;
-}
-
-/* position that indicators */
-.nav-folder-collapse-indicator {
-	color: var(--color-off);
-	left: 2px;
-	top: 5px;
-}
-
-.is-collapsed .nav-folder-collapse-indicator {
-	left: 0;
-	top: 3px;
-}
-
-/* Horizontal rule between Icons and vault in left nav; paddings, too! */
-.nav-buttons-container {
-	border-bottom: 1px solid var(--color-off);
-	padding: 5px;
-	margin: 0;
-}
-
-/* so that hte nav files container doesn't touch the top */
-.nav-files-container {
-	padding-top: 10px;
-}
-
-/* related: the items list */
-.item-list {
-	padding: 10px 0 0 0;
-}
-
-/* Just above the folder tree, the name of the vault */
-.nav-folder.mod-root>.nav-file-title,
-.nav-folder.mod-root>.nav-folder-title {
-	color: var(--text-nav);
-}
-
-/* Color of left nav tree text */
-.nav-file-title,
-.nav-folder-title {
-	color: var(--text-nav);
-}
-
-/* color of nav tree text hover */
-body:not(.is-grabbing) .nav-file-title:hover,
-body:not(.is-grabbing) .nav-folder-title:hover {
-	color: var(--color-accent);
-}
-
-/* Set the left nav background to same color as ribbon so we can make a curved corner that matches */
-.side-dock-panels-container {
-	background-color: var(--background-nav-alt);
-}
-
-/* Set the left nav background to different color from ribbon, and give a curved corner with statusbar */
-.side-dock.mod-left .side-dock-plugin-panel {
-	background-color: var(--background-nav);
-	border-bottom-left-radius: 10px;
-}
-
-/* Set the right nav background to different color from ribbon, and give a curved corner with statusbar */
-.side-dock.mod-right .side-dock-plugin-panel {
-	background-color: var(--background-nav);
-	border-bottom-right-radius: 10px;
-}
-
-/* Left nav ribbon background color */
-.side-dock-ribbon {
-	background-color: var(--background-nav-alt);
-}
-
-/* Left nav ribbon background-color */
-.side-dock-ribbon-before.is-before-active,
-.side-dock-ribbon-after.is-after-active,
-.side-dock-ribbon-tab.is-before-active,
-.side-dock-ribbon-tab.is-after-active {
-	background-color: var(--background-nav);
-}
-
-/* Left nav ribbon background-color */
-.side-dock-ribbon-before.is-before-active .side-dock-ribbon-tab-inner,
-.side-dock-ribbon-after.is-after-active .side-dock-ribbon-tab-inner,
-.side-dock-ribbon-tab.is-before-active .side-dock-ribbon-tab-inner,
-.side-dock-ribbon-tab.is-after-active .side-dock-ribbon-tab-inner {
-	background-color: var(--background-nav-alt);
-}
-
-/* Left nav ribbon active background-color */
-.side-dock-ribbon-tab.is-active {
-	background-color: var(--background-nav);
-}
-
-/* Left nav ribbon active hover text color (icon color) */
-.side-dock-ribbon-tab.is-active:hover {
-	color: var(--color-accent);
-}
-
-/* Left nav ribbon inactive hover text color (icon color) */
-.side-dock-ribbon-tab:hover,
-.side-dock-ribbon-action:hover {
-	color: var(--color-accent);
-}
-
-/* Background and text color of selected item in left nav tree */
-.nav-file.is-active>.nav-file-title,
-.nav-file.is-active>.nav-folder-title,
-.nav-file.is-active>.nav-folder-collapse-indicator,
-.nav-folder.is-active>.nav-file-title,
-.nav-folder.is-active>.nav-folder-title,
-.nav-folder.is-active>.nav-folder-collapse-indicator {
-	background-color: var(--color-accent);
-	color: var(--text-nav-selected);
-}
-
-/* Background and text color of selected item in left nav tree - when hovering */
-.nav-file.is-active>.nav-file-title:hover,
-.nav-file.is-active>.nav-folder-title:hover,
-.nav-file.is-active>.nav-folder-collapse-indicator:hover,
-.nav-folder.is-active>.nav-file-title:hover,
-.nav-folder.is-active>.nav-folder-title:hover,
-.nav-folder.is-active>.nav-folder-collapse-indicator:hover {
-	background-color: var(--color-accent);
-	color: var(--text-nav-selected);
-	cursor: default;
-}
-
-/* Background and text color of hovered collapse indicator in left nav tree */
-body:not(.is-grabbing) .nav-file-title:hover .nav-folder-collapse-indicator,
-body:not(.is-grabbing) .nav-folder-title:hover .nav-folder-collapse-indicator {
-	background-color: var(--background-secondary-alt);
-	color: var(--text-nav-selected);
-}
-
-/* Left Nav menu item - hover background color */
-body:not(.is-grabbing) .nav-file-title:hover,
-body:not(.is-grabbing) .nav-folder-title:hover {
-	background-color: var(--background-nav-alt);
-}
-
-/* Left Nav menu item - hover background color of the collapse/expand arrow */
-body:not(.is-grabbing) .nav-file-title:hover .nav-folder-collapse-indicator,
-body:not(.is-grabbing) .nav-folder-title:hover .nav-folder-collapse-indicator {
-	background-color: var(--background-nav-alt);
-}
-
-/* Left side dock */
-.side-dock.mod-left {
-	border-right: 1px solid var(--background-secondary-border);
-}
-
-/* header border colors */
-.workspace-split .workspace-leaf.mod-active .view-header {
-	border-bottom-color: var(--color-accent) !important;
-	border-width: 1px !important;
-	border-top: 1px solid var(--color-off);
-}
-
-.workspace-split .workspace-leaf .view-header,
-.workspace-split .workspace-leaf:only-of-type .view-header {
-	border-bottom-color: var(--color-off) !important;
-}
-
-.mod-horizontal .view-header,
-.mod-vertical .view-header {
-	/* border-top: 1px solid var(--color-off); */
-	border-bottom-width: 1px;
-}
-
-/* padding in front of title */
-.view-header-title-container {
-	padding-left: 0;
-}
-
-/* Font adjustments for pane headers */
+/* Fix font weights */
 .view-header-title {
-	font-size: 16px;
-	font-weight: 600;
+  font-weight: 700;
 }
 
-/* border bottom for view content */
-.view-content {
-	border-bottom: 1px solid var(--color-off);
+h1, h2, h3, h4, h5, h6, strong, .cm-s-obsidian .cm-header {
+  font-weight: 600;
 }
 
-/* items for the editor */
-.view-actions {
-	padding: 4px 0;
+/* headings */
+.markdown-preview-view h1{
+  font-size: 30px;
+  margin-top: 32px;
+  margin-bottom: 4px;
 }
-
-/* Status bar ... duh? :) */
-.status-bar {
-	background-color: var(--background-nav-alt);
-	border-top: 1px solid var(--color-off);
-	color: var(--text-nav);
-	margin-top: -1px;
+.markdown-preview-view h2{
+  font-size: 24px;
+  margin-top: 23px;
+  margin-bottom: 1px;
 }
-
-/* Context menu hover item */
-.menu-item:hover {
-	background-color: var(--background-secondary-alt);
-	color: var(--color-accent);
-}
-
-/* fix menu item icon height */
-.menu-item-icon {
-	line-height: 36px;
-}
-
-/* Font for the markdown source panel */
-div.markdown-source-view {
-	font-family: var(--font-family-editor);
-}
-
-/* Font for the markdown preview panel */
-div.markdown-preview-view {
-	font-family: var(--font-family-preview);
-}
-
-/* Changing color of the header hashtags ## */
-.cm-formatting-header {
-	color: var(--color-accent);
-}
-
-/* line height for editor mode */
-.cm-s-obsidian {
-	line-height: 2;
-}
-
-/* actual header sizes, plain text edition */
-.cm-s-obsidian pre.HyperMD-header.HyperMD-header-1,
-.cm-s-obsidian pre.HyperMD-header.HyperMD-header-2,
-.cm-s-obsidian pre.HyperMD-header.HyperMD-header-3,
-.cm-s-obsidian pre.HyperMD-header.HyperMD-header-4,
-.cm-s-obsidian pre.HyperMD-header.HyperMD-header-5,
-.cm-s-obsidian pre.HyperMD-header.HyperMD-header-6 {
-	font-size: inherit;
-	padding-bottom: 0;
-	line-height: 2em !important;
-}
-
-/* actual header paddings, preview edition */
-.markdown-preview-view h1,
-.markdown-preview-view h2,
 .markdown-preview-view h3,
 .markdown-preview-view h4,
 .markdown-preview-view h5,
-.markdown-preview-view h6 {
-	margin-top: 1.681em;
-	font-weight: bold;
+.markdown-preview-view h6{
+    font-size: 20px;
+    margin-top: 16px;
+    margin-bottom: 0px;
 }
 
-/* no header margin itself for the editor */
-.CodeMirror {
-	padding-top: 0;
+.cm-s-obsidian .cm-header-1 { font-size: 30px; }
+.cm-s-obsidian .cm-header-2 { font-size: 24px; }
+.cm-s-obsidian .cm-header-3,
+.cm-s-obsidian .cm-header-4,
+.cm-s-obsidian .cm-header-5,
+.cm-s-obsidian .cm-header-6{ font-size: 20px; }
+.cm-s-obsidian .cm-header-6 { color: var(--text-muted); }
+
+/* links */
+.external-link {
+  background-image: none; /* no external link indicator */
+  padding:0;
+  color: var(--text-normal);
 }
 
-/* header margin for text */
-.cm-s-obsidian .CodeMirror-code {
-	margin-top: 40px;
-	margin-bottom: 40px;
+.markdown-preview-view .internal-link, .popover.hover-popover .markdown-embed .internal-link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  line-height: 1.3;
+  border-bottom: 1px solid var(--background-modifier-border);
+  color: var(--text-normal);
+  text-decoration: none;
 }
 
-/* no margins for list in editor */
-.cm-s-obsidian pre.HyperMD-list-line {
-	padding-top: 0;
+/* Nifty SVG arrow before internal links */
+/* Also applies to embeds */
+.internal-link::before, .markdown-embed-link::before {
+  content: " ";
+  background-color: var(--text-normal);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpolygon points='5.4 26 24 7.4 24 20 26 20 26 4 10 4 10 6 22.6 6 4 24.6'%3E%3C/polygon%3E%3C/svg%3E");
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 4px;
 }
 
-/* Coloring the list bullets/numbers */
-.cm-s-obsidian span.cm-formatting-list {
-	color: var(--color-accent);
-	font-weight: 500;
+/* embeds (mimics embedded tables from Notion) */
+.markdown-embed-title {
+  font-size: 1.25em;
+  line-height: 1.5;
+  font-weight: 600;
+  text-align: left;
 }
 
-/* Editor view - task list, color and veritcal align */
-.cm-s-obsidian span.cm-formatting-task {
-	color: var(--color-accent);
-	font-weight: 500;
+.markdown-preview-view .markdown-embed {
+  border:none;
+  margin:0;
+  border-bottom: 1px solid var(--background-modifier-border);
+  border-radius: 0;
 }
 
-/* Preview Checkboxes don't seem to align correctly */
+.markdown-embed-link {
+  color: var(--text-normal);
+  right:unset;
+  left: 0;
+  height: 30px;
+  width: calc(100% - 20px);
+  margin-left: 4px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.markdown-embed-link::before {
+  font-size: 0.8em;
+}
+
+.markdown-embed-link svg {
+  display: none; /* hide the svg link icon, gets replaced with a nifty arrow */
+}
+
+/* table headers and first column styling */
+.markdown-preview-view th:first-child, .markdown-preview-view td:first-child {
+  border-left: none;
+}
+.markdown-preview-view th:last-child, .markdown-preview-view td:last-child {
+  border-right: none;
+}
+
+.markdown-preview-view th {
+  text-align: left;
+  font-weight: normal;
+  color: var(--text-muted);
+}
+
+.markdown-preview-view td:first-child {
+  font-weight: 600;
+}
+
+.markdown-preview-view hr {
+  height: 1px;
+  opacity: 0.5;
+}
+
+/* popover fixes */
+.popover.hover-popover .markdown-embed-link {
+  border-bottom: none;
+}
+
+/* task lists! */
 .markdown-preview-view .task-list-item-checkbox {
-	width: 15px;
-	height: 15px;
-	/* position: relative; */
-	/* top: 3px; */
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  border: 1px solid var(--text-normal);
+  border-radius: 2px;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  margin-right: 4px;
+  margin-bottom: 2px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.markdown-preview-view .task-list-item-checkbox:checked {
+  border:none;
+  background-color: var(--interactive-accent);
+}
+.markdown-preview-view .task-list-item-checkbox:hover {
+  background-color: var(--background-primary-alt);
+}
+/* the SVG check mark */
+.markdown-preview-view .task-list-item-checkbox:checked::before {
+  content: ' ';
+  position: absolute;
+  background-color: white;
+  left:1px;
+  top:1px;
+  right:1px;
+  bottom:1px;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpolygon points='5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039'%3E%3C/polygon%3E%3C/svg%3E");
 }
 
-/* footnote font size */
-.cm-s-obsidian pre.HyperMD-footnote {
-	font-size: inherit;
-	padding-left: inherit;
+/* this should strike through checked off items, once CSS supports :has
+  (it's draft right now) */
+.markdown-preview-view .task-list-item:has(.task-list-item-checkbox:checked) {
+  text-decoration: line-through;
+  color: var(--text-muted);
 }
 
-/* footnote colors */
-.cm-s-obsidian pre.HyperMD-footnote span.cm-hmd-footnote {
-	color: var(--color-front);
+.markdown-preview-view .task-list-item {
+  margin-left: -40px;
 }
 
-/* Preview code block background */
-.markdown-preview-view pre {
-	padding: 1em;
-	background-color: var(--code-block-background);
-	border-radius: 4px;
-	border: 1px solid var(--code-block-border);
-	white-space: pre-wrap;
+/* Blockquotes */
+.markdown-preview-view blockquote, .cm-s-obsidian pre.HyperMD-quote-1 {
+  border:none;
+  border-left: 3px solid currentcolor;
 }
 
-/* Preview for blockquotes */
+/* for some reason messing with the padding and size like this caused weirdness
+  with the editor mode cursor position. So just preview for now */
 .markdown-preview-view blockquote {
-	border: 0;
-	border-left: 5px solid var(--color-accent);
+  padding: 0 0.9em;
+  font-size: 1.2em;
+  margin: 3px 2px;
 }
 
-/* blockquote coloring */
-.cm-s-obsidian span.cm-formatting {
-	color: var(--color-accent) !important;
+/* code */
+.markdown-preview-view code, .cm-s-obsidian span.cm-inline-code, .cm-s-obsidian pre.HyperMD-codeblock {
+  color: var(--code);
+  font-family: var(--font-monospace);
 }
 
+/* escape character */
+.cm-s-obsidian span.cm-hmd-escape-backslash {
+  color: var(--text-faint);
+}
+
+/* highlight */
+.markdown-preview-view mark {
+  color: var(--text-normal);
+}
+
+/* bulleted lists */
+ul {
+  list-style-type: disc;
+  padding-inline-start: 40px;
+}
+ul ul {
+  padding-inline-start: 60px;
+}
+
+/* graph view colours */
+.graph-view.color-fill {
+  color: var(--GFill);
+}
+.graph-view.color-line {
+  color: var(--GLine);
+}
+.graph-view.color-text {
+  color: var(--GText);
+}
+.graph-view.color-fill-highlight {
+  color: var(--interactive-accent);
+}
+.graph-view.color-line-highlight {
+  color: var(--interactive-accent);
+}
+
+/* misc fixes */
 .cm-s-obsidian span.cm-quote {
-	color: var(--color-front);
+  color: var(--text-normal);
 }
 
-/* hashtag coloring and decoration */
-.cm-s-obsidian span.cm-hashtag {
-	text-decoration: none;
+ /* bringing in the margins */
+.CodeMirror-wrap, .markdown-preview-view {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 20px 30vh !important;
+  border: none;
+  position: relative;
+}
+.CodeMirror-wrap { height:auto; }
+.markdown-source-view { overflow: auto; }
+.CodeMirror-scroll { overflow: visible !important; }
+/*.workspace-leaf-resize-handle { display: none; } */
+
+/* Andy Matuschak mode! V2! for 0.7.0! (so... 2.7?) I think by @cotemaxime and @death_au, I certainly can't claim any of it */
+
+/* everything under .mod-root now. Don't want Andy messing with sidebars */
+/* also, Andy only makes sense for vertical splits, at the root level, right? */
+.mod-root.workspace-split.mod-vertical {
+  overflow-x:auto;
+  --header-width: 36px; /* <- 36px is the header height in the default theme */
+}
+.mod-root.workspace-split.mod-vertical > div {
+  min-width: calc(700px + var(--header-width)); /* <-- 700px is the default theme's "readable" max-width */
+  box-shadow: 0px 0px 20px 20px rgba(0,0,0,0.25);
+  position:sticky;
+  left:0;
 }
 
-.cm-s-obsidian span.cm-hashtag-end {
-	color: inherit;
-	text-decoration: underline;
+/* shift sticky position, so titles will stack up to the left */
+/* This will currently stack to a maximum of 10 before resetting */
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-8) { left: calc(var(--header-width) * 0); }
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-7) { left: calc(var(--header-width) * 1); }
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-6) { left: calc(var(--header-width) * 2); }
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-5) { left: calc(var(--header-width) * 3); }
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-4) { left: calc(var(--header-width) * 4); }
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-3) { left: calc(var(--header-width) * 5); }
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-2) { left: calc(var(--header-width) * 6); }
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n-1) { left: calc(var(--header-width) * 7); }
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n+0) { left: calc(var(--header-width) * 8); }
+.mod-root.workspace-split.mod-vertical > div:nth-child(10n+1) { left: calc(var(--header-width) * 9); }
+
+/* now it's time for the fancy vertical titles */
+
+/* first we'll add a bit of gap for the title to sit inside of */
+.workspace-leaf-content {
+  padding-left: var(--header-width);
+  position: relative;
 }
 
-/* link coloring and decoration */
-.cm-s-obsidian span.cm-url {
-	color: inherit;
+/* this is where the magic happens */
+.view-header {
+  writing-mode: vertical-lr;
+  border-right: 1px solid var(--background-secondary-alt);
+  border-left: 2px solid var(--background-secondary-alt);
+  border-top: none;
+  border-bottom: none;
+  height: auto;
+  width: var(--header-width);
+  position: absolute;
+  left:0;
+  top:0;
+  bottom:0;
 }
 
-/* inline code color and font size */
-.cm-s-obsidian span.cm-inline-code {
-	color: var(--color-front);
-	font-size: inherit;
+/* active titles have different border colours */
+.workspace-leaf.mod-active .view-header {
+  border-right: 2px solid var(--interactive-accent);
+  border-bottom: none;
 }
 
-/* Code block border color */
-.cm-s-obsidian div.HyperMD-codeblock-begin-bg {
-	border-top: 1px solid var(--code-block-border);
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
+/* unset the title container height and swap padding */
+.view-header-title-container {
+  height: unset;
+  padding-left: unset;
+  padding-top: 5px;
 }
 
-/* Code block border color */
-.cm-s-obsidian div.HyperMD-codeblock-end-bg {
-	border-bottom: 1px solid var(--code-block-border);
-	border-bottom-left-radius: 4px;
-	border-bottom-right-radius: 4px;
+/* fix the long-title-obscuring shadows */
+.view-header-title-container:after {
+  width: 100%;
+  height: 30px;
+  top:unset;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, var(--background-secondary));
+}
+.workspace-leaf.mod-active .view-header-title-container:after {
+  background: linear-gradient(to bottom, transparent, var(--background-primary-alt));
 }
 
-/* Code block background color */
-.cm-s-obsidian div.HyperMD-codeblock-bg {
-	background-color: var(--code-block-background);
+/* swap the padding/margin around for the header and actions icons */
+.view-header-icon, .view-actions {
+  padding: 10px 5px;
+}
+.view-action {
+  margin: 8px 0;
 }
 
-/* Colors and fonts for code block */
-.theme-light code[class*="language-"],
-.theme-light pre[class*="language-"],
-.theme-dark code[class*="language-"],
-.theme-dark pre[class*="language-"],
-.markdown-preview-view code {
-	color: var(--color-front);
-	font-size: inherit;
-	white-space: pre-wrap;
-	background-color: var(--color-background);
+/* get rid of the gap left by the now-missing horizontal title */
+.view-content {
+  height: 100%;
 }
 
-/* Code block left and right padding */
-/* .cm-s-obsidian pre.HyperMD-codeblock {
-	padding: 0px 10px 0px 10px;
-} */
-/* Code block borders */
-.cm-s-obsidian div.HyperMD-codeblock-begin-bg,
-.cm-s-obsidian pre.HyperMD-codeblock-begin,
-.cm-s-obsidian pre.HyperMD-codeblock-end,
-.cm-s-obsidian div.HyperMD-codeblock-end-bg {
-	border: 0;
+/* make the fake drop target overlay have a background so you can see it. */
+/* TODO: figure out how the fake target overlay works so we can put the title back, too */
+.workspace-fake-target-overlay {
+  background-color: var(--background-primary);
+
+
+/* Auto-collapsing sidebars courtesy @kmaasrud */
+
+.app-container.is-left-sidedock-collapsed .side-dock.mod-left:not(:hover), .app-container.is-right-sidedock-collapsed .side-dock.mod-right:not(:hover) {
+  width: 0px !important;
 }
 
-/* Code block colors & fonts */
-.cm-s-obsidian pre.HyperMD-codeblock {
-	color: var(--color-front);
-	line-height: inherit;
-	font-size: inherit;
-}
+/* Naked Embeds */
+.markdown-embed-title { display:none; }
+.markdown-preview-view .markdown-embed { border:none; padding:0; margin:0; }
+.markdown-preview-view .markdown-embed-content { max-height: unset;}
+.markdown-preview-view .markdown-embed-content>:first-child { margin-top: 0; }
+.markdown-preview-view .markdown-embed-content>:last-child { margin-bottom: 0; }
 
-/* token string */
-.theme-dark .token.selector,
-.theme-dark .token.attr-name,
-.theme-dark .token.color,
-.theme-dark .token.string,
-.theme-dark .token.property,
-.theme-dark .token.char,
-.theme-dark .token.builtin,
-.theme-dark .token.inserted,
-.theme-light .token.selector,
-.theme-light .token.attr-name,
-.theme-light .token.color,
-.theme-light .token.string,
-.theme-light .token.property,
-.theme-light .token.char,
-.theme-light .token.builtin,
-.theme-light .token.inserted {
-	color: var(--color-accent);
-}
 
-/* Color links */
-.cm-s-obsidian span.cm-link,
-.cm-s-obsidian span.cm-hmd-internal-link {
-	color: inherit;
-}
+/* level indicators for bullet list */
 
-/* Add a tiny bit of color and padding to the link brackets and parenthesis */
-.cm-s-obsidian span.cm-formatting-link,
-.cm-s-obsidian span.cm-formatting-link-string {
-	color: var(--color-accent);
-	padding: 0 1px 0 1px;
-	/* font-weight: 500; */
+.cm-hmd-list-indent .cm-tab, ul ul { position: relative; }
+.cm-hmd-list-indent .cm-tab::before, ul ul::before {
+ content:'';
+ border-left: 1px solid rgba(0, 122, 255, 0.25);
+ position: absolute;
 }
-
-/* Set background of code panes to pure white since main background is off-white */
-.markdown-preview-view code {
-	background-color: rgba(0, 0, 0, 0);
-	bottom: 0px;
+.cm-hmd-list-indent .cm-tab::before { left: 0; top: -5px; bottom: -4px;
 }
-
-/* Additional left/right padding for tag pane so hover background has some room */
-.tag-pane-tags {
-	padding-left: 10px;
-	padding-right: 5px;
-}
-
-/* color the tags in the tag pane */
-.tag-pane-tag {
-	color: var(--color-front);
-}
-
-/* Color the hover background like we do the selected left nav */
-.tag-pane-tag:hover {
-	background-color: var(--background-nav-alt);
-}
-
-/* Style the tag pane tag count with the bear red coloring used in selected item from left nav */
-.tag-pane-tag-count {
-	background-color: var(--color-accent);
-	color: var(--text-nav-selected);
-}
-
-/* search results are waayyy to big */
-.search-result-file-matches {
-	margin-bottom: 5px;
-}
-
-.search-result-file-title {
-	font-size: 14px;
-}
-
-.search-result-file-match {
-	font-size: 14px;
-}
-
-.search-result-file-title,
-.search-result-file-match {
-	padding: 0;
-}
-
-.search-result-container {
-	padding: 10px 5px;
-}
-
-.search-result-container.mod-global-search {
-	padding: 10px 15px 15px 15px;
-}
-
-.search-result-container.mod-global-search .search-result {
-	padding-bottom: 10px;
-}
-
-.search-empty-state {
-	font-size: 14px;
-	margin: -10px 5px 15px 5px;
-}
-
-/* Backlinks title match hover */
-.search-result-file-title:hover {
-	background-color: var(--background-nav-alt);
-}
-
-/* Backlinks content match hover */
-.search-result-file-match:hover {
-	background-color: var(--background-nav-alt);
-}
-
-/* Backlink titles for matches */
-.search-result-file-title {
-	color: var(--text-nav);
-}
-
-/* Backlink highlighted [[links]] */
-.search-result-file-matched-text {
-	color: var(--text-nav-selected);
-	background-color: var(--color-accent);
-	padding: 2px;
-	border-radius: 4px;
-}
-
-/* same for tags, way toooo big */
-.tag-pane-tags {
-	padding: 0 5px;
-}
-
-.tag-pane-tag {
-	padding: 0;
-	font-size: 14px;
-}
-
-.tag-pane-empty {
-	margin: 0;
-	font-size: 14px;
-}
-
-/* collaps thingies */
-.workspace-ribbon-collapse-btn {
-	margin-top: 5px;
-}
-
-/* collapse hover */
-.workspace-ribbon-collapse-btn:hover {
-	color: var(--color-accent);
-}
-
-/* workspace tabs */
-.workspace-tabs {
-	padding-right: 0;
-	border-bottom: 1px solid var(--color-off);
-}
-
-/* workspace leafs and splits */
-.workspace-split.mod-root .workspace-split.mod-vertical .workspace-leaf-content,
-.workspace-split.mod-vertical>.workspace-split,
-.workspace-leaf {
-	padding-right: 0 !important;
-}
-
-/* make that "padding" in tab headers smaller */
-.workspace-tab-container-before,
-.workspace-tab-container-after {
-	width: 10px;
-}
-
-/* smaller paddings for tab header icons */
-.workspace-tab-header-inner {
-	padding: 5px 10px 5px 5px;
-}
-
-/* hover color for tab headers */
-.workspace-tab-header:hover {
-	color: var(--color-accent);
-}
-
-/* icons for the tab headers */
-.workspace-tab-header.is-active {
-	color: var(--color-front);
-}
-
-/* workspace ribbons */
-.workspace-ribbon.mod-left {
-	border-right: 1px solid var(--color-off);
-}
-
-.workspace-ribbon.mod-right {
-	border-left: 1px solid var(--color-off);
-}
-
-.workspace-leaf-resize-handle {
-	border-right: 1px solid var(--color-off);
-	width: 0 !important;
-	background: transparent !important;
-}
-
-/* workspace headers */
-.workspace-tab-header-container,
-.workspace-split.mod-root>.workspace-leaf:first-of-type:last-of-type .view-header,
-.workspace-split.mod-root>.workspace-leaf:first-of-type:last-of-type.mod-active .view-header-title-container:after {
-	border-bottom: 1px solid var(--color-off);
-	height: 2.25em;
-}
-
-.workspace-split.mod-root>.workspace-leaf:first-of-type:last-of-type.mod-active .view-header-title-container:after {
-	height: calc(2.25em - 2px);
-	border-color: var(--color-off);
-}
-
-/* embeds and titles */
-.markdown-embed-title,
-.file-embed-title {
-	font-size: 16px;
-	font-weight: bold;
-}
-
-.markdown-preview-view .markdown-embed,
-.markdown-preview-view .file-embed {
-	border: 1px solid var(--color-off);
-}
-
-.markdown-embed-content h1,
-.markdown-embed-content h2,
-.markdown-embed-content h3,
-.markdown-embed-content h4,
-.markdown-embed-content h5,
-.markdown-embed-content h6 {
-	font-weight: bold;
-}
-
-/* boh selectah */
-.suggestion-item.is-selected {
-	background-color: var(--color-accent);
-	color: inherit;
-}
-
-/* nothing to see here: emoty states */
-.empty-state {
-	margin-top: 35px;
-	border-top: 1px solid var(--color-off);
-}
-
-.empty-state-title {
-	font-size: 16px;
-	font-weight: normal;
-}
-
-.empty-state-action {
-	font-size: 14px;
-	line-height: 25px;
+ul ul::before { left: -11px; top: 0; bottom: 0;
 }
