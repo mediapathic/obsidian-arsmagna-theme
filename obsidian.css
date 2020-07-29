@@ -316,20 +316,6 @@ ul ul {
   color: var(--text-normal);
 }
 
- /* bringing in the margins */
-.CodeMirror-wrap, .markdown-preview-view {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0px 20px 30vh !important;
-  border: none;
-  position: relative;
-}
-.CodeMirror-wrap { height:auto; }
-.markdown-source-view { overflow: auto; }
-.CodeMirror-scroll { overflow: visible !important; }
-/*.workspace-leaf-resize-handle { display: none; } */
-
 /* Andy Matuschak mode! V2! for 0.7.0! (so... 2.7?) I think by @cotemaxime and @death_au, I certainly can't claim any of it */
 
 /* everything under .mod-root now. Don't want Andy messing with sidebars */
