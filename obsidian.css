@@ -85,6 +85,7 @@ body.theme-light {
 /* Fix font weights */
 .view-header-title {
   font-weight: 700;
+  padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6, strong, .cm-s-obsidian .cm-header {
@@ -365,6 +366,7 @@ ul ul {
   left:0;
   top:0;
   bottom:0;
+  padding-right: 4px;
 }
 
 /* active titles have different border colours */
