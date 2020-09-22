@@ -409,7 +409,7 @@ ul ul {
 /* TODO: figure out how the fake target overlay works so we can put the title back, too */
 .workspace-fake-target-overlay {
   background-color: var(--background-primary);
-
+}
 
 /* Auto-collapsing sidebars courtesy @kmaasrud */
 
